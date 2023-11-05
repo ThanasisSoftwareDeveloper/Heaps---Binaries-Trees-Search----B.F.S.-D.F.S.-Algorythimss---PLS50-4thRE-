@@ -1,1 +1,18 @@
+1.1 Sorting by Max Heap, carried out in two phases:
+    - Phase of creating the heap
+    - Phase of creating the heap; phase of creating the heap; phase of processing the heap
+procedure Restore(first, last, A, table)// based on LinearMakeHeap procedure 
+      father = first; child = 2 * father;
+     while  father <= last do
+            if child < last  then
+                 if A[child] < A[child+1] then child = child +1;
+            if table [father] < table [child] then
+                 A[child/2] = A[child]; child = 2 * child;
+            else father = last +1;
+      A[father div 2] = A[father];
+
+ procedure HeapSort(A, table)
+for i = floor(n div 2) downto1 do Restore(i, n, A, table); 
+for i = n downto2 do; //επεξεργασία σωρού
+      Swap(A[1] , A[i]); Restore (i, n, A, table); 
 
